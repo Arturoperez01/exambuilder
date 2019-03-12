@@ -8,27 +8,30 @@ import {
   MatInputModule,
   MatListModule,
   MatSelectModule,
+  MatRadioModule,
   MatToolbarModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PizzaFormContainerComponent } from './containers/pizza-form-container/pizza-form-container.component';
+import { ExamenFormContainerComponent } from './containers/examen-form-container/examen-form-container.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { SelectedPizzaViewerComponent } from './components/selected-pizza-viewer/selected-pizza-viewer.component';
-import { PizzaListComponent } from './components/pizza-list/pizza-list.component';
-import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
-import { PizzaSizePickerComponent } from './components/pizza-size-picker/pizza-size-picker.component';
+import { SelectedPreguntaViewerComponent } from './components/selected-pregunta-viewer/selected-pregunta-viewer.component';
+import { PreguntasListComponent } from './components/pregunta-list/pregunta-list.component';
+import { ExamenDetailsComponent } from './components/examen-details/examen-details.component';
+import { PreguntaTipoPickerComponent } from './components/pregunta-tipo-picker/pregunta-tipo-picker.component';
+import { RespuestaSelectPickerComponent } from './components/respuesta-select-picker/respuesta-select-picker.component';
 
 
 export const APP_MODULE_DECLARATIONS = [
   AppComponent,
-  PizzaFormContainerComponent,
+  ExamenFormContainerComponent,
   NavbarComponent,
-  SelectedPizzaViewerComponent,
-  PizzaListComponent,
-  CustomerDetailsComponent,
-  PizzaSizePickerComponent
+  SelectedPreguntaViewerComponent,
+  PreguntasListComponent,
+  ExamenDetailsComponent,
+  PreguntaTipoPickerComponent,
+  RespuestaSelectPickerComponent
 ];
 
 export const APP_MODULE_IMPORTS = [
@@ -39,6 +42,7 @@ export const APP_MODULE_IMPORTS = [
   MatFormFieldModule,
   MatSelectModule,
   MatCheckboxModule,
+  MatRadioModule,
   MatIconModule,
   MatListModule,
   MatToolbarModule,

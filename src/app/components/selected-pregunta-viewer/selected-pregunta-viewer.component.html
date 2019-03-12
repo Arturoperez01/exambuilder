@@ -1,0 +1,57 @@
+<div class="PizzaSelectorView" [ngClass]="{ 'PreguntaSelectorView--empty': !selectedPreguntaGroup }">
+  <div class="row" *ngIf="selectedPreguntaGroup" [formGroup]="selectedPreguntaGroup">
+    <div class="col-md-12" *ngIf="selectedPreguntaGroup.errors?.PreguntasTipo&&selectedPreguntaGroup.dirty">
+      <div  class="ValidationErrorLabel mg-bottom-15">
+        {{selectedPreguntaGroup.errors?.PreguntasTipo?.message}}
+      </div>
+    </div>
+    <div class="col-md-6 offset-md-3">
+      <app-pregunta-tipo-picker formControlName="tipo" (valueChange)="cambiarTipo($event)"></app-pregunta-tipo-picker>
+      <!--app-pregunta-tipo-picker [formGroup]="selectedPreguntaGroup" ></app-pregunta-tipo-picker-->
+    </div>
+    <div class="col-md-12 mg-top-15">
+        <mat-form-field class="example-full-width">
+            <textarea matInput formControlName="enunciado" placeholder="Coloque el enunciado de la pregunta"></textarea>
+        </mat-form-field>
+    </div>
+    <div class="col-md-12 ">
+      <h5>Respuestas</h5>
+      
+        <div class="ToppingsSelector" >        
+            <div class="ToppingsSelector" formArrayName="respuestas">
+              <div class="ToppingsSelector__item" *ngFor="let respuesta of respuestasArray.controls" [formGroup]="respuesta" >
+                
+                <mat-checkbox [formControl]="respuesta.get('selected')" (click)="cambiarRespuesta()">
+                </mat-checkbox>
+                <div *ngIf="selectedPreguntaGroup.value.tipo==0">
+                  {{respuesta.get('respuesta').value}}
+                </div >
+                <mat-form-field *ngIf="selectedPreguntaGroup.value.tipo==1" class="example-full-width">
+                  <input  matInput placeholder="Seleccion" [formControl]="respuesta.get('respuesta')">
+                </mat-form-field>
+
+              </div>
+          <!--app-respuesta-select-picker formArrayName="respuestas"  ></app-respuesta-select-picker-->
+          <!--mat-radio-group  class="ToppingsSelector__item"  formArrayName="respuestas">
+            <mat-radio-button *ngFor="let respuesta of respuestasArray.controls"  (click)="cambiarRespuesta(respuesta)" value='false'>
+              {{respuesta.get('respuesta').value}}
+            </mat-radio-button>
+          </mat-radio-group-->
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+    <div class="row" *ngIf="!selectedPreguntaGroup" style="height: 100%">
+      <div class="PizzaSelectorView__no-selected">
+        <h4>
+          No has seleccionado ninguna pregunta todavia.
+        </h4>
+        <button mat-button  color="primary" (click)="addPregunta.emit()">
+          <mat-icon>add_circle</mat-icon>
+          Add one
+        </button>
+      </div>
+    </div>
+</div>

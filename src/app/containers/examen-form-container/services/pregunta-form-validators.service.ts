@@ -1,39 +1,42 @@
 import { Injectable } from '@angular/core';
 import { FormArray, FormControl, FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms';
-import { IToppingItem, PizzaSizeEnum } from './pizza-form.interface';
+import { IRespuestaItem, PreguntaTipoEnum } from './examen-form.interface';
+//import { copyFileSync } from 'fs';
 
 @Injectable()
-export class PizzaFormValidatorsService {
+export class PreguntaFormValidatorsService {
 
   constructor() { }
 
   formValidator(): ValidatorFn {
     return (control: FormGroup): ValidationErrors | null => {
       const errors: ValidationErrors = {};
-
-      if (!(control.get('pizzas') as FormArray).length) {
-        errors.noPizzas = {
-          message: 'You must select at least one pizza to order'
+      //f((control.get('preguntas') as FormArray).length);
+      if (!(control.get('preguntas') as FormArray).length) {
+        errors.noPreguntas = {
+          message: 'Debes colocar una pregunta Preguntas para crear la plantilla'
         };
       }
-
+      //*/
       return Object.keys(errors).length ? errors : null;
     };
   }
 
-  pizzaItemValidator(): ValidatorFn {
+  preguntaItemValidator(): ValidatorFn {
     return (control: FormGroup): ValidationErrors | null => {
       const errors: ValidationErrors = {};
 
-      const pizzaSize: PizzaSizeEnum = control.get('size').value;
-      const pizzaToppings: IToppingItem[] = control.get('toppings').value.filter(i => i.selected);
-
-      if (pizzaSize !== PizzaSizeEnum.LARGE && pizzaToppings.length > 4) {
-        errors.toppingPizzaSize = {
-          message: 'To use more then 4 toppings you must selected large pizza'
+      //const preguntaTipo: PreguntaTipoEnum = control.get('tipo').value;
+      const preguntaRespuestas: IRespuestaItem[] = control.get('respuestas').value.find(i => i.selected);
+      
+      
+      //console.log(control);
+      if (!preguntaRespuestas) {
+        errors.PreguntasTipo = {
+          message: 'Debe seleccionar por lo menos 1 repuesta'
         };
       }
-
+      //*/
       return Object.keys(errors).length ? errors : null;
     };
   }
