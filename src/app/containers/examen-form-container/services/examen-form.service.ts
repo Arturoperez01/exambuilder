@@ -4,8 +4,10 @@ import { PreguntaFormValidatorsService } from './pregunta-form-validators.servic
 import { IExamenFormInterface, IRespuestaVOFEnum, IRespuestaSeleccionEnum, PreguntaTipoEnum, IRespuestaItem } from './examen-form.interface';
 //import { identifierModuleUrl } from '@angular/compiler';
 
+//const GLOBAL =  require('./../../assets/cunix.json')
 @Injectable()
 export class ExamenFormService {
+	public url: string;
   public availableRespuesta;//= [...Object.values(IRespuestaVOFEnum)];
   public form: FormGroup;
 
@@ -79,6 +81,10 @@ export class ExamenFormService {
   deletePreguntas(index: number): void {
     this.preguntasArray.removeAt(index);
     this.form.markAsDirty();
+  }
+
+  getSeleccionTipo(url){
+    //return this.http.get<Hero[]>(this.url)
   }
 
   getPreguntaFormGroup(id= 0, idExam = 0, tipo: PreguntaTipoEnum = PreguntaTipoEnum.VoF,enunciado="introduzca la pregunta." ): FormGroup {

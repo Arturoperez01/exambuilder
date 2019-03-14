@@ -10,15 +10,14 @@
     <div class="col-md-8">
       <div class="row">
         <div class="col-md-12">
+          <app-examen-details [group]="form.get('examenDetails')"></app-examen-details>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
           <app-selected-pregunta-viewer (addPregunta)="onPreguntaAdd()"
                                      [selectedPreguntaGroup]="selectedPreguntaGroup">
           </app-selected-pregunta-viewer>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <app-examen-details [group]="form.get('examenDetails')"></app-examen-details>
         </div>
       </div>
       <div class="row">

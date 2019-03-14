@@ -1,5 +1,5 @@
 
-<div class="row" [formGroup]="group">
+<div  class="row" [formGroup]="group">
   <div class="col-md-12">
     <div class="PizzaList">
       <div class="PizzaList__title">
@@ -7,7 +7,7 @@
           Preguntas
         </h2>
       </div>
-      <div class="PizzaList__content" formArrayName="preguntas">
+      <div  class="PizzaList__content" formArrayName="preguntas">
         <div class="PizzaList__item"
              *ngFor="let pregunta of preguntasArray.controls; let i = index;"
              [ngClass]="getPreguntaListItemClassStates(pregunta, i)"

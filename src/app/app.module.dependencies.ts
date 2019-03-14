@@ -20,7 +20,6 @@ import { SelectedPreguntaViewerComponent } from './components/selected-pregunta-
 import { PreguntasListComponent } from './components/pregunta-list/pregunta-list.component';
 import { ExamenDetailsComponent } from './components/examen-details/examen-details.component';
 import { PreguntaTipoPickerComponent } from './components/pregunta-tipo-picker/pregunta-tipo-picker.component';
-import { RespuestaSelectPickerComponent } from './components/respuesta-select-picker/respuesta-select-picker.component';
 
 
 export const APP_MODULE_DECLARATIONS = [
@@ -30,8 +29,7 @@ export const APP_MODULE_DECLARATIONS = [
   SelectedPreguntaViewerComponent,
   PreguntasListComponent,
   ExamenDetailsComponent,
-  PreguntaTipoPickerComponent,
-  RespuestaSelectPickerComponent
+  PreguntaTipoPickerComponent
 ];
 
 export const APP_MODULE_IMPORTS = [

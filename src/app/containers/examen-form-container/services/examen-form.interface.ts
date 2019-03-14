@@ -36,13 +36,20 @@ export enum PreguntaTipoEnum {
   VoF = 0, //verdadero o falso
   Seleccion = 1 // Seleccion simple
 }
-/*
-export enum RespuestavofEnum {
-  //SAUSAGE = {name: 'Sausage', selected: 'true'},
-  VERDADERO = true,
-  FALSO = false
+
+export enum ServiciosEnum {
+  enel = 0,
+  claro = 1,
+  banco = 2
 }
 //*/
+
+export const IServicioSeleccion = {
+  enel  : {nombre: 'enel', selected: 0},
+  claro : {nombre: 'claro', selected: 1},
+  banco : {nombre: 'banco', selected: 2}
+
+}
 
 export const IRespuestaSeleccionEnum  = {
   pregunta1 : {respuesta: null, selected: 'false'},
