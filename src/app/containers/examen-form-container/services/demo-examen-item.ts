@@ -3,7 +3,7 @@ import { IExamenFormInterface, IPreguntaItem, PreguntaTipoEnum, IRespuestaItem }
 export const DEMO_EXAMEN: IExamenFormInterface = {
   examenDetails: {
     titulo: 'Este es el titulo',
-    servicio: 'enel',
+    //servicio: 'enel',
     id: 0,
   },
   preguntas: [{

@@ -1,14 +1,14 @@
 
 <div  class="row" [formGroup]="group">
   <div class="col-md-12">
-    <div class="PizzaList">
-      <div class="PizzaList__title">
+    <div class="PreguntaList">
+      <div class="PreguntaList__title">
         <h2>
           Preguntas
         </h2>
       </div>
-      <div  class="PizzaList__content" formArrayName="preguntas">
-        <div class="PizzaList__item"
+      <div  class="PreguntaList__content" formArrayName="preguntas">
+        <div class="PreguntaList__item"
              *ngFor="let pregunta of preguntasArray.controls; let i = index;"
              [ngClass]="getPreguntaListItemClassStates(pregunta, i)"
              (click)="preguntaSelected.emit(i)"
@@ -18,12 +18,12 @@
           </span>
 
           <button mat-icon-button (click)="deletePregunta.emit(i); $event.stopPropagation()">
-            <mat-icon class="PizzaList__item__icon">remove_circle</mat-icon>
+            <mat-icon class="PreguntaList__item__icon">remove_circle</mat-icon>
           </button>
         </div>
 
-        <div class="PizzaList__item PizzaList__item--add" (click)="addPregunta.emit()">
-          <mat-icon class="PizzaList__item__icon">add_circle</mat-icon>
+        <div class="PreguntaList__item PreguntaList__item--add" (click)="addPregunta.emit()">
+          <mat-icon class="PreguntaList__item__icon">add_circle</mat-icon>
         </div>
       </div>
     </div>

@@ -1,15 +1,15 @@
 
 <div class="row">
   <div class="col-md-12">
-    <div class="PizzaSizePicker">
-      <div class="PizzaSizePicker__item"
+    <div class="ExamenSizePicker">
+      <div class="ExamenSizePicker__item"
            (click)="changeTipo(PreguntaTipoEnum.VoF)"
-           [ngClass]="{'PizzaSizePicker__item--active': PreguntaTipo == PreguntaTipoEnum.VoF}">
+           [ngClass]="{'ExamenSizePicker__item--active': PreguntaTipo == PreguntaTipoEnum.VoF}">
         Verdadero o falso
       </div>
-      <div class="PizzaSizePicker__item"
+      <div class="ExamenSizePicker__item"
            (click)="changeTipo(PreguntaTipoEnum.Seleccion)"
-           [ngClass]="{'PizzaSizePicker__item--active': PreguntaTipo == PreguntaTipoEnum.Seleccion}">
+           [ngClass]="{'ExamenSizePicker__item--active': PreguntaTipo == PreguntaTipoEnum.Seleccion}">
           Seleccion Simple
       </div>
     </div>

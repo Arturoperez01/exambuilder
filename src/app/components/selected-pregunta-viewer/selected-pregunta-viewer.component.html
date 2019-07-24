@@ -17,9 +17,9 @@
     <div class="col-md-12 ">
       <h5>Respuestas</h5>
       
-        <div class="ToppingsSelector" >        
-            <div class="ToppingsSelector" formArrayName="respuestas">
-              <div class="ToppingsSelector__item" *ngFor="let respuesta of respuestasArray.controls" [formGroup]="respuesta" >
+        <div class="PreguntaSelector" >        
+            <div class="PreguntaSelector" formArrayName="respuestas">
+              <div class="PreguntaSelector__item" *ngFor="let respuesta of respuestasArray.controls" [formGroup]="respuesta" >
                 
                 <mat-checkbox [formControl]="respuesta.get('selected')" (click)="cambiarRespuesta()">
                 </mat-checkbox>
@@ -44,7 +44,7 @@
   </div>
 
     <div class="row" *ngIf="!selectedPreguntaGroup" style="height: 100%">
-      <div class="PizzaSelectorView__no-selected">
+      <div class="ExamenSelectorView__no-selected">
         <h4>
           No has seleccionado ninguna pregunta todavia.
         </h4>

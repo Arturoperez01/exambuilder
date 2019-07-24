@@ -1,8 +1,8 @@
-.PizzaSizePicker {
+.ExamenSizePicker {
   max-width: 700px;
   display: flex;
 
-  .PizzaSizePicker__item {
+  .ExamenSizePicker__item {
     flex: 1;
     border: 1px solid #bdaaff;
     border-right: none;
@@ -19,7 +19,7 @@
       background: #dac9ff;
     }
 
-    &.PizzaSizePicker__item--active {
+    &.ExamenSizePicker__item--active {
       background: #673ab7;
       color: white;
     }

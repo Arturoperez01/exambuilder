@@ -20,7 +20,7 @@ export class ExamenFormService {
       preguntas: this.fb.array([]),
       examenDetails: this.fb.group({
         titulo: [null, Validators.required],
-        servicio: [null, Validators.required],
+        //servicio: [null, Validators.required],
         id: [0, Validators.required]
       })
     }, {

@@ -1,5 +1,5 @@
-.PizzaList {
-  .PizzaList__item {
+.PreguntaList {
+  .PreguntaList__item {
     border: 1px solid #f1f1f1;
     padding: 15px;
     margin-bottom: 10px;
@@ -21,36 +21,36 @@
       background: #f1f1f1;
       cursor: pointer;
 
-      .PizzaList__item__icon {
+      .PreguntaList__item__icon {
         color: #D42434;
       }
     }
 
-    &.PizzaList__item--active {
+    &.PreguntaList__item--active {
       background: #673ab7;
 
       span,
-      .PizzaList__item__icon {
+      .PreguntaList__item__icon {
         color: white;
       }
     }
 
-    &.PizzaList__item--has-error {
+    &.PreguntaList__item--has-error {
       border: 1px solid #D42434;
     }
 
-    &.PizzaList__item--add {
+    &.PreguntaList__item--add {
       justify-content: center;
 
       &:hover {
-        .PizzaList__item__icon {
+        .PreguntaList__item__icon {
           color: #673ab7;
           transform: rotate(90deg);
         }
       }
     }
 
-    .PizzaList__item__icon {
+    .PreguntaList__item__icon {
       transition: all .3s cubic-bezier(.25,.8,.25,1);
       color: #b6b6b6;
     }

@@ -29,7 +29,7 @@ export interface IPreguntaItem {
 export interface IExamenDetails {
   id: number;
   titulo: string;
-  servicio: string;
+  //servicio: string;
 }
 
 export enum PreguntaTipoEnum {
